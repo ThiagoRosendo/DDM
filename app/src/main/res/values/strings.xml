@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GC Dominium</string>
+    <string name="usuario">Usuário</string>
+    <string name="senha">Senha</string>
+    <string name="welcome_msg">Faça o login abaixo:</string>
+    <string name="login">Entrar</string>
+    <string name="action_buscar">Buscar</string>
+    <string name="action_atualizar">Atualizar</string>
+    <string name="action_adicionar">Adicionar</string>
+    <string name="action_config">Configurações</string>
+</resources>
