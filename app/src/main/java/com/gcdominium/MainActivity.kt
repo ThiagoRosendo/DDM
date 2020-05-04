@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.login.btEntrar
 import kotlinx.android.synthetic.main.login.tUsuario
 import kotlinx.android.synthetic.main.login.*
