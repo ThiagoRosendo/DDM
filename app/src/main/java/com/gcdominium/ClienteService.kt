@@ -16,7 +16,6 @@ object ClienteService {
         val dao = DatabaseManager.getclienteDAO()
         var clientesOff = dao.findAll() as ArrayList<Cliente>
         var ids = arrayListOf<Long>()
-        var idsOff = arrayListOf<Long>()
 
         if (AndroidUtils.isInternetDisponivel()) {
             var clientes = ArrayList<Cliente>()
@@ -24,16 +23,8 @@ object ClienteService {
             var json = HttpHelper.get(url)
             clientes = parserJson(json)
 
-            for (cliente in clientes) {
-                saveOffline(cliente)
-            }
-
             for (item in clientes){
                 ids.add(item.id)
-            }
-
-            for (item in clientesOff){
-                idsOff.add(item.id)
             }
 
             for (cliente in clientesOff){
@@ -42,6 +33,10 @@ object ClienteService {
                     json = HttpHelper.get(url)
                     clientes = parserJson(json)
                 }
+            }
+
+            for (cliente in clientes) {
+                saveOffline(cliente)
             }
 
             return clientes
