@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 open class DebugActivity : AppCompatActivity() {
 
-    private val TAG = "LMSApp"
+    private val TAG = "GCDApp"
     private val className: String
         get() {
             val s = javaClass.name
