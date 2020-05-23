@@ -59,8 +59,18 @@ class TelaInicialActivity : DebugActivity(), NavigationView.OnNavigationItemSele
         this.clientes = ClienteService.getClientes(context)
             runOnUiThread {
         recyclerClientes?.adapter = ClienteAdapter(clientes) {onClickCliente(it)}
+                enviaNotificacao(this.clientes.get(4))
     }
         }.start()
+    }
+
+    fun enviaNotificacao(cliente: Cliente) {
+        // Intent para abrir tela quando clicar na notificação
+        val intent = Intent(this, ClienteActivity::class.java)
+        // parâmetros extras
+        intent.putExtra("cliente", cliente)
+        // Disparar notificação
+        NotificationUtil.create(this, 1, intent, "GC Dominium", "Novo cliente: ${cliente.nome}")
     }
 
     fun onClickCliente(cliente: Cliente) {

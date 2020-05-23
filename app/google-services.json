@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "311340591304",
+    "firebase_url": "https://aula-ddm.firebaseio.com",
+    "project_id": "aula-ddm",
+    "storage_bucket": "aula-ddm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:311340591304:android:34e39b281395d70230ddfd",
+        "android_client_info": {
+          "package_name": "com.gcdominium"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "311340591304-ds5dcgnh4f6ekjs00e55bt8oa0gaafk1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXkO44rEInW8ndC6afLW9KB8yeSTk2cYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "311340591304-ds5dcgnh4f6ekjs00e55bt8oa0gaafk1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
