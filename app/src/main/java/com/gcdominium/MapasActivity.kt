@@ -13,9 +13,6 @@ class MapasActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         val mapaFragment = MapaFragment()
-        supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.layoutMapas, mapaFragment)
-                .commit()
+        supportFragmentManager.beginTransaction().replace(R.id.layoutMapas, mapaFragment).commit()
     }
 }

@@ -9,11 +9,11 @@
             android:title="Clientes" />
         <item
             android:id="@+id/nav_list"
-            android:icon="@drawable/list"
-            android:title="Lista de clientes" />
+            android:icon="@drawable/ic_adicionar_black"
+            android:title="Novo Cliente" />
         <item
             android:id="@+id/nav_map"
-            android:icon="@drawable/service"
+            android:icon="@drawable/ic_local_black"
             android:title="Localização" />
         <item
             android:id="@+id/nav_sair"

@@ -7,19 +7,16 @@ import com.google.firebase.messaging.RemoteMessage
 
 class MyFirebaseMessagingService: FirebaseMessagingService() {
     val TAG = "firebase"
-    // recebe o novo token criado
     override fun onNewToken(token: String?) {
         super.onNewToken(token)
-        Log.d(TAG, "Novo token: $token")
-        // guarda token em SharedPreferences
+        Log.d(TAG, "Token: $token")
         Prefs.setString("FB_TOKEN", token!!)
     }
 
-    // recebe a notificação de push
+
     override fun onMessageReceived(mensagemRemota: RemoteMessage?) {
         Log.d(TAG, "onMessageReceived")
 
-        // verifica se a mensagem recebida do firebase é uma notificação
         if (mensagemRemota?.notification != null) {
             val titulo = mensagemRemota?.notification?.title
             val corpo = mensagemRemota?.notification?.body
@@ -32,17 +29,14 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
 
     private fun showNotification(mensagemRemota: RemoteMessage) {
 
-        // Intent para abrir quando clicar na notificação
         val intent = Intent(this, ClienteActivity::class.java)
-        // se título for nulo, utilizar nome no app
+
         val titulo = mensagemRemota?.notification?.title?: getString(R.string.app_name)
         var mensagem = mensagemRemota?.notification?.body!!
 
-        // verificar se existem dados enviados no push
         if(mensagemRemota?.data.isNotEmpty()) {
             val clienteId = mensagemRemota.data.get("clienteId")?.toLong()!!
             mensagem += ""
-            // recuperar disciplina no WS
             val cliente = ClienteService.getCliente(this, clienteId)
             intent.putExtra("cliente", cliente)
         }

@@ -93,11 +93,11 @@ class TelaInicialActivity : DebugActivity(), NavigationView.OnNavigationItemSele
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_clientes -> {
-                Toast.makeText(this, "Cadastrar Cliente", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Clientes", Toast.LENGTH_SHORT).show()
             }
 
             R.id.nav_list -> {
-                Toast.makeText(this, "Lista de clientes", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, ClienteCadastroActivity::class.java))
             }
 
             R.id.nav_map -> {

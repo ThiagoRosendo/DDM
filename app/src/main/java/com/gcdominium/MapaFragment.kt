@@ -2,9 +2,7 @@ package com.gcdominium
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -33,45 +31,27 @@ class MapaFragment : Fragment(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap?) {
         this.map = googleMap
 
-        // verificar se localização está autorizada
-        val ok = PermissionUtils.validate(activity!!, 1,
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.ACCESS_COARSE_LOCATION)
-        // colocar o botão de localização
+        val ok = PermissionUtils.validate(activity!!, 1, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
         if (ok) map?.isMyLocationEnabled = true
 
-
-        // criar um objeto de latitude e longitude
         val location =LatLng(-23.606078, -46.668798)
-
-        // posicionar o mapa na coordenada criada, com um valor de zoom
         val update = CameraUpdateFactory.newLatLngZoom(location, 18f)
         map?.moveCamera(update)
 
-        // colocar um marcado no local selecionado
-        map?.addMarker(MarkerOptions()
-                .title("GC Dominium")
-                .snippet("Av. Pavão, 729")
-                .position(location)
-        )
-        // tipo do papa
+        map?.addMarker(MarkerOptions().title("GC Dominium").snippet("Av. Pavão, 729").position(location))
         map?.mapType=GoogleMap.MAP_TYPE_NORMAL
     }
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater?.inflate(R.layout.fragment_mapa, container, false)
         val mapFragment = childFragmentManager.findFragmentById(R.id.mapFragment) as SupportMapFragment
         mapFragment.getMapAsync(this)
         return view
     }
 
-    // habilitar botão de localização após permissão do usuário
     @SuppressLint("MissingPermission")
-    override fun onRequestPermissionsResult(requestCode: Int,
-                                            permissions: Array<out String>,
-                                            grantResults: IntArray) {
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         for (result in grantResults) {
             if (result == PackageManager.PERMISSION_GRANTED) {
