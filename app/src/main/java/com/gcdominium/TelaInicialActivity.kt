@@ -100,8 +100,8 @@ class TelaInicialActivity : DebugActivity(), NavigationView.OnNavigationItemSele
                 Toast.makeText(this, "Lista de clientes", Toast.LENGTH_SHORT).show()
             }
 
-            R.id.nav_mensagens -> {
-                Toast.makeText(this, "Serviços", Toast.LENGTH_SHORT).show()
+            R.id.nav_map -> {
+                startActivity(Intent(this, MapasActivity::class.java))
             }
 
             R.id.nav_sair -> {

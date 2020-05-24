@@ -12,9 +12,9 @@
             android:icon="@drawable/list"
             android:title="Lista de clientes" />
         <item
-            android:id="@+id/nav_mensagens"
+            android:id="@+id/nav_map"
             android:icon="@drawable/service"
-            android:title="Serviços" />
+            android:title="Localização" />
         <item
             android:id="@+id/nav_sair"
             android:icon="@drawable/exit"
