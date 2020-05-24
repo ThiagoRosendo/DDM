@@ -33,8 +33,10 @@
             android:name=".ClienteActivity"
             android:parentActivityName=".TelaInicialActivity"
             android:theme="@style/AppTheme.Toolbar" />
-        <activity android:name=".ClienteCadastroActivity"></activity>
-        <activity android:name=".MapasActivity"></activity>
+        <activity android:name=".ClienteCadastroActivity"
+            android:parentActivityName=".TelaInicialActivity"/>
+        <activity android:name=".MapasActivity"
+            android:parentActivityName=".TelaInicialActivity"/>
 
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>

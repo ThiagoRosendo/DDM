@@ -10,6 +10,7 @@ class ClienteCadastroActivity : DebugActivity() {
         setContentView(R.layout.activity_cadastrar_cliente)
         setTitle("Cadastrar Cliente")
 
+
         btn_cad_cliente.setOnClickListener {
             val cliente = Cliente()
             cliente.nome = nomeCliente.text.toString()

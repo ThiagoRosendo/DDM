@@ -151,13 +151,8 @@ class TelaInicialActivity : DebugActivity(), NavigationView.OnNavigationItemSele
         if  (id == R.id.action_buscar) {
             Toast.makeText(context, "Botão de buscar", Toast.LENGTH_LONG).show()
         } else if (id == R.id.action_atualizar) {
-            if (progressbar.visibility == View.INVISIBLE){
-                progressbar.visibility = View.VISIBLE
-                Timer().schedule(10000) {
-                    progressbar.visibility = View.INVISIBLE
-                }
-            }
-            else {progressbar.visibility = View.INVISIBLE}
+            finish();
+            startActivity(getIntent())
         } else if (id == R.id.action_config) {
             Toast.makeText(context, "Botão de configuracoes", Toast.LENGTH_LONG).show()
         }

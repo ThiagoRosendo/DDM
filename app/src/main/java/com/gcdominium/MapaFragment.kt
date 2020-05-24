@@ -35,7 +35,7 @@ class MapaFragment : Fragment(), OnMapReadyCallback {
         if (ok) map?.isMyLocationEnabled = true
 
         val location =LatLng(-23.606078, -46.668798)
-        val update = CameraUpdateFactory.newLatLngZoom(location, 18f)
+        val update = CameraUpdateFactory.newLatLngZoom(location, 18.5f)
         map?.moveCamera(update)
 
         map?.addMarker(MarkerOptions().title("GC Dominium").snippet("Av. Pavão, 729").position(location))
